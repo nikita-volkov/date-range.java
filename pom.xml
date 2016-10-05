@@ -6,7 +6,7 @@
 
   <groupId>com.github.nikita-volkov.java</groupId>
   <artifactId>date-range</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
 
   <name>date-range</name>
   <description>Date range for Java</description>
