@@ -2,7 +2,6 @@ package com.github.nikita_volkov.java.date_range;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Optional;
 
 /**
  * Inclusive date range.
@@ -25,14 +24,11 @@ public final class DateRange implements Serializable {
 
   /**
    * Construct, while throwing an exception in case the input values are incorrect.
+   * @throws IllegalArgumentException when input forms an invalid range
    */
   public static DateRange validated(LocalDate from, LocalDate to) throws IllegalArgumentException {
     if (to.isBefore(from)) throw new IllegalArgumentException("'to' is not after 'from'");
     return new DateRange(from, to);
-  }
-
-  public static Optional<DateRange> validatedOptional(LocalDate from, LocalDate to) {
-    return to.isBefore(from) ? Optional.empty() : Optional.of(new DateRange(from, to));
   }
 
   /**
